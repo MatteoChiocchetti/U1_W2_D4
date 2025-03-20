@@ -18,8 +18,9 @@ function crazySum(num1, num2) {
   let result = num1 + num2;
   if (num1 === num2) {
     return result * 3;
+  } else {
+    return result;
   }
-  return result;
 }
 console.log(crazySum(8, 6));
 console.log(crazySum(8, 8));
@@ -30,6 +31,15 @@ console.log(crazySum(8, 8));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function crazyDiff(n) {
+  const absDiff = Math.abs(n - 19);
+  if (n > 19) {
+    return absDiff * 3;
+  } else {
+    return absDiff;
+  }
+}
+console.log(crazyDiff[2]);
 
 /* ESERCIZIO 4
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
@@ -38,11 +48,7 @@ console.log(crazySum(8, 8));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function boundary(n) {
-  if ((n >= 20 && n <= 100) || n === 400) {
-    return true;
-  } else {
-    return false;
-  }
+  return (n >= 20 && n <= 100) || n === 400;
 }
 console.log(boundary(20));
 console.log(boundary(401));
@@ -54,26 +60,37 @@ console.log(boundary(401));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function epify(string) {
-  if (string.startsWith("EPICODE")) {
-    return string;
+function epify(str) {
+  if (str.toUpperCase().startsWith("EPICODE")) {
+    return str;
   } else {
-    return "EPICODE" + string;
+    const epified = "EPICODE" + str;
+    return "EPICODE" + str;
   }
 }
-console.log(epify("EPICODE"));
+console.log(epify("bella raga"));
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function check3and7(n) {
+  return n % 3 === 0 || n % 7 === 0;
+}
+console.log(check3and7(21));
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function reverseString(str) {
+  const arrOfChar = str.split("");
+  console.log(arrOfChar);
+  console.log(arrOfChar.reverse());
+}
+reverseString("epicode");
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
@@ -81,6 +98,20 @@ console.log(epify("EPICODE"));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function upperFirst(str) {
+  const words = str.split("");
+  const arrOfNewWords = [];
+  for (let i = 0; i < words.lenght; i++) {
+    const word = words[i];
+    const firstChar = word.charAt(0);
+    const firstCharUpperCase = firstChar.toUpperCase();
+    const remainingLetters = word.slice(1);
+    const wordCapitalzed = firstCharUpper + remainingLetters;
+    arrOfNewWords.push(wordCapitalzed);
+  }
+  return arrOfNewWords.join("");
+}
+console.log(upperFirst("Oggi è una bella giornata"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
